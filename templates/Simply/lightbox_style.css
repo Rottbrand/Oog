@@ -1,0 +1,297 @@
+
+/*
+ * Oog Photo-Gallery v3.2
+ * http://www.oog-gallery.de/ 
+ * Copyright (C) 2011 Torben Rottbrand
+ * 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+#oog_lightbox_overlay {
+  opacity: 0.4;
+  z-index: 200;
+  background: #000;
+  /* visibility is defined by Oog */
+  /* width is defined by Oog */
+  /* height is defined by Oog */
+  /* top is defined by Oog */
+  /* left is defined by Oog */
+  /* position is defined by Oog */
+}
+
+#oog_lightbox_filedescription {
+  text-align: left;
+  color: #888;
+  font-size: 10px;
+  padding-top: 4px;
+  margin-left: 14px;
+  margin-right: 14px;
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+  font-family: Verdana
+  /* width will define the script */ 
+}
+
+#oog_lightbox_loading {
+  background: transparent url(imgdata/loading.gif) top center no-repeat;
+  text-align: center;
+  position: fixed;
+  z-index: 500;
+  visibility: hidden;
+  left: 50%;
+  top: 50%;
+  height: 80px;
+  width: 300px;
+  margin-left: -150px;
+  margin-top: -40px;
+  color: #FFFFFF;
+  font: bold 14px sans-serif;
+  cursor: pointer;
+}
+#oog_lightbox_loading p {
+  margin-top: 53px;
+}
+
+#oog_lightbox_extended_box_request {
+  color: #888;
+  text-align: left;
+  font-size: 11px;
+  font-family: Verdana
+  overflow-y: auto;
+  height: 140px;
+  padding: 12px;
+  padding-top: 0px;
+}
+
+#oog_lightbox_functions {
+  position: fixed;
+  z-index: 500;
+  left: 50%;
+  bottom: 0;
+  width: 700px;
+  height: 25px;
+  margin-left: -350px;
+}
+
+#oog_lightbox_functions_buttons {
+  position: relative;
+  bottom: 16px;
+}
+
+#oog_lightbox_previous_radius {
+  position: absolute;
+  cursor: pointer;
+}
+
+#oog_lightbox_next_radius {
+  position: absolute;
+  cursor: pointer;
+}
+
+#oog_lightbox_photo_border {
+  padding-top: 14px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oECQ8cNtVo81oAAAAIdEVYdENvbW1lbnQA9syWvwAAAA1JREFUCNdjePfjxyoACT8DiaFL+kUAAAAASUVORK5CYII=);
+}
+
+#oog_lightbox_main {
+  position: fixed;
+  z-index: 400;
+  visibility: hidden;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+}
+
+/*/////////////////////////////////// Buttons ///////////////////////////////////*/
+
+#oog_lightbox_next_but {
+  position: absolute;
+  bottom: 10%;
+  right: -10px;
+  height: 54px;
+  width: 54px;
+  background: transparent url(imgdata/right.png) no-repeat;
+  background-position: 0px 0px;
+  cursor: pointer;
+  z-index: 100;
+  border-width: 0px;
+}
+#oog_lightbox_next_but:hover {
+  background-position: -54px 0px;
+}
+#oog_lightbox_next_radius:hover #oog_lightbox_next_but {
+  background-position: -54px 0px;
+}
+
+#oog_lightbox_previous_but {
+  position: absolute;
+  bottom: 10%;
+  left: -11px;
+  height: 54px;
+  width: 54px;
+  background: transparent url(imgdata/left.png) no-repeat;
+  background-position: 0px 0px;
+  cursor: pointer;
+  z-index: 100;
+  border-width: 0px;
+}
+#oog_lightbox_previous_but:hover {
+  background-position: -54px 0px;
+}
+#oog_lightbox_previous_radius:hover #oog_lightbox_previous_but {
+  background-position: -54px 0px;
+}
+
+#oog_lightbox_close_but {
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  background: transparent url(imgdata/close.png) no-repeat;
+  background-position: 0px 0px;
+  cursor: pointer;
+  z-index: 100;
+  border-width: 0px;
+}
+#oog_lightbox_close_but:hover {
+  background-position: -48px 0px;
+}
+
+#oog_lightbox_save_but {
+  height: 17px;
+  width: 17px;
+  margin: 5px;
+  background: transparent url(imgdata/save.png) no-repeat;
+  background-position: 0px 0px;
+  cursor: pointer;
+  border-width: 0px;
+}
+#oog_lightbox_save_but:hover {
+  background-position: -17px 0px;
+}
+
+#oog_lightbox_exif_but {
+  height: 17px;
+  width: 17px;
+  margin: 5px;
+  background: transparent url(imgdata/infos.png) no-repeat;
+  background-position: 0px 0px;
+  cursor: pointer;
+  border-width: 0px;
+}
+#oog_lightbox_exif_but:hover {
+  background-position: -17px 0px;
+}
+
+#oog_lightbox_comments_but {
+  height: 17px;
+  width: 17px;
+  margin: 5px;
+  background: transparent url(imgdata/comments.png) no-repeat;
+  background-position: 0px 0px;
+  cursor: pointer;
+  border-width: 0px;
+}
+#oog_lightbox_comments_but:hover {
+  background-position: -17px 0px;
+}
+
+#oog_lightbox_slideshow_but {
+  height: 17px;
+  width: 17px;
+  margin: 5px;
+  background: transparent url(imgdata/slideshow.png) no-repeat;
+  background-position: 0px 0px;
+  cursor: pointer;
+  border-width: 0px;
+}
+#oog_lightbox_slideshow_but:hover {
+  background-position: -17px 0px;
+}
+
+/*/////////////////////////////////// Shadows ///////////////////////////////////*/
+
+#oog_lightbox_shad_topleft {
+  background: transparent url(imgdata/shad_topleft.png) no-repeat;
+  height: 18px;
+  width: 13px;
+}
+
+#oog_lightbox_shad_top {
+  background: transparent url(imgdata/shad_top.png) repeat-x;
+  height: 18px;
+}
+
+#oog_lightbox_shad_topright {
+  background: transparent url(imgdata/shad_topright.png) no-repeat;
+  height: 18px;
+  width: 13px;  
+}
+
+#oog_lightbox_shad_left {
+  background: transparent url(imgdata/shad_left.png) repeat-y;
+  width: 13px;
+}
+
+#oog_lightbox_shad_right {
+  background: transparent url(imgdata/shad_right.png) repeat-y;
+  width: 13px;
+}
+
+#oog_lightbox_shad_bottomleft {
+  background: transparent url(imgdata/shad_bottomleft.png) no-repeat;
+  height: 18px;
+  width: 13px;
+}
+
+#oog_lightbox_shad_bottom {
+  background: transparent url(imgdata/shad_bottom.png) repeat-x;
+  height: 18px;
+}
+
+#oog_lightbox_shad_bottomright {
+  background: transparent url(imgdata/shad_bottomright.png) no-repeat;
+  height: 18px;
+  width: 13px;  
+}
+
+
+#oog_lightbox_extended_box_shad_topleft {
+  background: transparent url(imgdata/shad_topleft.png) no-repeat;
+  height: 18px;
+  width: 13px;
+}
+
+#oog_lightbox_extended_box_shad_top {
+  background: transparent url(imgdata/shad_top.png) repeat-x;
+  height: 18px;
+}
+
+#oog_lightbox_extended_box_shad_topright {
+  background: transparent url(imgdata/shad_topright.png) no-repeat;
+  height: 18px;
+  width: 13px;  
+}
+
+#oog_lightbox_extended_box_shad_left {
+  background: transparent url(imgdata/shad_left.png) repeat-y;
+  width: 13px;
+}
+
+#oog_lightbox_extended_box_shad_right {
+  background: transparent url(imgdata/shad_right.png) repeat-y;
+  width: 13px;
+}

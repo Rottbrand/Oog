@@ -1,0 +1,68 @@
+#folder_actions {
+  text-align: left;
+  margin-bottom: 3px;
+}
+#folder_actions a:hover {
+  text-decoration: none;
+}
+#file_actions {
+  text-align: left;
+  background: #D9E4FF;
+  padding: 3px;
+  padding-bottom: 0;
+}
+#file_actions img {
+	border:  1px solid transparent;
+	margin-left: 1px;
+}
+#file_actions img:hover {
+  border: 1px solid #B4B4B4;
+}
+#btn_also_subfolders {
+	line-height: 22px;
+	margin-left: 0;
+}
+
+.tooltip {
+	cursor: help;
+  text-decoration: none;
+	position: relative;
+}
+.tooltip span {
+	margin-left: -999em;
+	position: absolute;
+	text-align: left;
+	color: #000;
+}
+.tooltip:hover > span {
+	border-radius: 5px 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; 
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+	font-family: Calibri, Tahoma, Geneva, sans-serif;  
+	position: absolute;
+  left: -9px;
+  top: 15px;
+  z-index: 1;
+	margin-left: 0;
+  width: 190px;
+  padding: 10px;
+  background: #9FDAEE;
+  border: 1px solid #2BB0D7;
+}
+.tooltip:hover > .custom { top: 20px; }
+
+
+#album_mediafiles .placeholder {
+  float: left;
+	height: 161px;
+	width: 174px;
+	background: transparent;
+}
+
+#album_mediafiles .demo-selected {
+  background: #000;
+  cursor: move;
+}
